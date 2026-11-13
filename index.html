@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy 19th Birthday, babe ✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="bg"></canvas>
+<canvas id="fx"></canvas>
+<div id="glow"></div>
+
+<section id="gate" class="scene on">
+  <p class="small">A surprise for</p>
+  <h1 class="gold big">ANKITA</h1>
+  <p id="count" class="count"></p>
+  <button id="open" class="btn" disabled>Unlocks on her birthday</button>
+  <button id="preview" class="btn ghost">Preview the full experience</button>
+</section>
+
+<section id="text" class="scene"><p id="line" class="line"></p></section>
+
+<section id="cakeScene" class="scene">
+  <svg id="cake" viewBox="0 0 400 400" aria-label="Birthday cake with 19 candles">
+    <defs>
+      <linearGradient id="gold" x1="0" x2="1"><stop offset="0" stop-color="#8a6a2a"/><stop offset=".5" stop-color="#f6e3a1"/><stop offset="1" stop-color="#9c7a30"/></linearGradient>
+      <linearGradient id="cream" x1="0" x2="1"><stop offset="0" stop-color="#d9dcea"/><stop offset=".45" stop-color="#fff"/><stop offset="1" stop-color="#c9cde0"/></linearGradient>
+      <radialGradient id="fl" cx=".5" cy=".7" r=".6"><stop offset="0" stop-color="#fff7c2"/><stop offset=".5" stop-color="#ffc247"/><stop offset="1" stop-color="#ff8a00" stop-opacity="0"/></radialGradient>
+    </defs>
+    <ellipse cx="200" cy="378" rx="120" ry="10" fill="url(#gold)"/>
+    <rect x="188" y="352" width="24" height="26" fill="url(#gold)"/>
+    <ellipse cx="200" cy="350" rx="175" ry="16" fill="url(#gold)"/>
+    <rect x="45" y="250" width="310" height="98" rx="12" fill="url(#cream)"/>
+    <ellipse cx="200" cy="250" rx="155" ry="12" fill="#fff"/>
+    <rect x="45" y="296" width="310" height="14" fill="#14284f"/>
+    <rect x="130" y="172" width="140" height="80" rx="10" fill="url(#cream)"/>
+    <ellipse cx="200" cy="172" rx="70" ry="8" fill="#fff"/>
+    <rect x="130" y="214" width="140" height="12" fill="#14284f"/>
+    <g id="deco" fill="#f3d98b"></g>
+    <g id="candles"></g>
+  </svg>
+  <div id="wishUI" class="wish">
+    <button id="hold" class="hold" aria-label="Hold to make your wish"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" class="trk"/><circle id="ring" cx="50" cy="50" r="44" class="prg"/></svg><span>Hold</span></button>
+    <p class="small">Hold to make your wish (touch, mouse, or Space)</p>
+  </div>
+</section>
+
+<section id="reveal" class="scene"><h2 class="gold huge" id="hb">HAPPY 19TH BIRTHDAY</h2><h2 class="gold big" id="hb2">BABE!</h2><div id="num19">19</div></section>
+<section id="msg" class="scene"><div id="msgBox" class="msg"></div></section>
+<section id="friend" class="scene"><p id="fLine" class="line"></p></section>
+<section id="final" class="scene">
+  <h2 class="gold big">19 YEARS OF BABE</h2>
+  <p class="line f1">19 years of memories, laughter, dreams, and beautiful moments.</p>
+  <p class="line f2">The best chapters of your story are still waiting to be written.</p>
+  <h3 class="gold f3">Happy Birthday Once Again, Sane!</h3>
+  <p class="small f4">A little surprise, made especially for you.</p>
+  <p class="sig f4">— Aayush Ghimire</p>
+  <button id="replay" class="btn f4">↻ Replay</button>
+</section>
+
+<button id="music" class="music" aria-label="Toggle music">♪ Music off</button>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+:root{--gold:#f2d78e;--gold2:#c9a24d;--navy:#050a1c;--ink:#e9ecf7}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;background:var(--navy);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;overflow:hidden}
+canvas{position:fixed;inset:0;width:100%;height:100%}
+#fx{z-index:5;pointer-events:none}
+#glow{position:fixed;inset:0;background:radial-gradient(circle at 50% 55%,rgba(242,215,142,.18),transparent 55%);opacity:0;transition:opacity 2s;pointer-events:none}
+.scene{position:fixed;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:env(safe-area-inset-top) 1.2rem env(safe-area-inset-bottom);text-align:center;opacity:0;visibility:hidden;transition:opacity 1.6s,visibility 1.6s}
+.scene.on{opacity:1;visibility:visible}
+.gold{font-family:'Cinzel',Georgia,serif;font-weight:700;letter-spacing:.12em;background:linear-gradient(180deg,#fff7d6,var(--gold) 45%,var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(242,215,142,.45))}
+.big{font-size:clamp(2.4rem,11vw,6rem)}.huge{font-size:clamp(1.8rem,8vw,4.6rem)}
+.small{font-size:1.15rem;letter-spacing:.2em;text-transform:uppercase;color:#b9c0dc}
+.line{font-size:clamp(1.6rem,5.5vw,3rem);font-style:italic;color:var(--gold);max-width:22ch;line-height:1.25;opacity:0;transition:opacity 1.5s;text-shadow:0 0 20px rgba(242,215,142,.4)}
+.line.show{opacity:1}
+.count{font-size:1.4rem;color:var(--gold);min-height:2rem}
+.btn{font:600 1rem 'Cinzel',serif;letter-spacing:.15em;color:#1b1405;background:linear-gradient(135deg,#fff3c4,var(--gold2));border:0;border-radius:99px;padding:.9rem 2rem;cursor:pointer;box-shadow:0 0 25px rgba(242,215,142,.35)}
+.btn:disabled{opacity:.4;cursor:not-allowed}.btn.ghost{background:none;color:var(--gold);border:1px solid var(--gold2);box-shadow:none}
+#cake{width:min(86vw,440px);filter:drop-shadow(0 20px 40px rgba(0,0,0,.6));opacity:0;transform:translateY(30px) scale(.95);transition:all 2s}
+#cakeScene.on #cake{opacity:1;transform:none}
+.candle{fill:#fff6e0;stroke:#d8c79a;stroke-width:.5}
+.flame{fill:url(#fl);transform-box:fill-box;transform-origin:50% 100%;animation:fk .35s infinite alternate ease-in-out;transition:opacity 1s}
+.flame.out{opacity:0;animation:none}
+@keyframes fk{from{transform:scale(1,1) rotate(-3deg)}to{transform:scale(.88,1.12) rotate(3deg)}}
+.wish{display:flex;flex-direction:column;align-items:center;gap:.6rem;opacity:0;transition:opacity 1s}.wish.show{opacity:1}
+.hold{position:relative;width:84px;height:84px;background:rgba(242,215,142,.08);border:0;border-radius:50%;color:var(--gold);font:600 .95rem 'Cinzel',serif;cursor:pointer;touch-action:none;user-select:none}
+.hold svg{position:absolute;inset:0;transform:rotate(-90deg)}.trk{fill:none;stroke:rgba(242,215,142,.2);stroke-width:4}
+.prg{fill:none;stroke:var(--gold);stroke-width:4;stroke-linecap:round;stroke-dasharray:276.5;stroke-dashoffset:276.5}
+#num19{position:absolute;font:700 min(60vw,38rem)/1 'Cinzel',serif;color:rgba(242,215,142,.07);z-index:-1;opacity:0;transition:opacity 3s}
+#reveal.on #num19{opacity:1}
+#hb,#hb2{opacity:0;transform:scale(.9);transition:all 2s}#reveal.on #hb{opacity:1;transform:none;transition-delay:.4s}#reveal.on #hb2{opacity:1;transform:none;transition-delay:1.6s}
+.msg{max-width:34rem;font-size:clamp(1.15rem,3.8vw,1.55rem);line-height:1.5;max-height:90vh;overflow:auto}
+.msg p{margin:.7rem 0;opacity:0;transform:translateY(10px);transition:all 1.6s;text-shadow:0 0 14px rgba(242,215,142,.25)}.msg p.show{opacity:1;transform:none}
+.msg p:first-child{font-family:'Cinzel',serif;color:var(--gold);font-size:1.5em}
+#final .line{opacity:0;max-width:26ch;font-size:clamp(1.2rem,4vw,1.8rem)}#final .f3,#final .f4{opacity:0;transition:opacity 1.6s}
+#final h3{font-size:clamp(1.4rem,5vw,2.4rem)}#final .show{opacity:1}
+.sig{font-style:italic;font-size:1.6rem;color:var(--gold)}
+.music{position:fixed;z-index:9;top:max(env(safe-area-inset-top),.8rem);right:.8rem;background:rgba(5,10,28,.6);border:1px solid var(--gold2);color:var(--gold);border-radius:99px;padding:.4rem .9rem;font:inherit;cursor:pointer}
+body.dark #bg{opacity:.15;transition:opacity .6s}
